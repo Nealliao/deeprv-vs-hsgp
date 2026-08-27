@@ -1,0 +1,13 @@
+# Inference
+numpyro>=0.13
+jax>=0.4.20
+jaxlib>=0.4.20
+arviz>=0.16
+
+# Numerics / data
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+
+# Figures
+matplotlib>=3.7

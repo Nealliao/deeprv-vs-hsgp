@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+.matplotlib/
+.numba_cache/
+
+# Large posterior draws and trained decoder weights are not tracked.
+# Regenerate with the fitting / training scripts (see README "Reproducing").
+*.npz
+!experiments/**/decoder_config.npz
+*.pdf
+!thesis/*.pdf
+outputs/
