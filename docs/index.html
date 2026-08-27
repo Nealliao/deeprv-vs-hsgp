@@ -44,8 +44,7 @@ a{color:var(--acc)}
 <h1>Neural surrogate priors for Bayesian hierarchical models: what does DeepRV preserve, and what does it distort?</h1>
 <p class="byline">Haoyu Liao · supervised by Dr Oliver Ratmann</p>
 <div class="btns">
-<a class="btn p" href="thesis.pdf">Read the thesis (PDF)</a>
-<a class="btn" href="https://github.com/Nealliao/deeprv-vs-hsgp">Code on GitHub</a>
+<a class="btn p" href="https://github.com/Nealliao/deeprv-vs-hsgp">Code on GitHub</a>
 </div></div></header>
 
 <div class="wrap">
@@ -72,17 +71,19 @@ covariance-kernel mismatch and a seasonal-parameterisation mismatch.</p>
 <div class="scroll"><table>
 <tr><th>Property</th><th>Preserved?</th><th>Evidence</th></tr>
 <tr><td>Latent <strong>fields</strong> and their predictive consequences</td><td class="yes">yes</td>
-<td>posterior mean trends correlate at 0.9998 and 0.9999 on the two birth series; held-out predictive density on ECDC tied at 0.6 SE</td></tr>
+<td>held-out predictive density on ECDC is tied at 0.6 SE, with matching calibration, on cells withheld from every likelihood</td></tr>
 <tr><td><strong>Hyperparameter</strong> posteriors</td><td class="no">no</td>
-<td>Dutch trend lengthscale displaced by 3.0 pooled posterior SD, while every parameter bypassing the decoder agrees to four decimal places</td></tr>
+<td>on ECDC the variance-normalised decoder leaves the spatial lengthscale unidentified (3.72 against HSGP's 0.53), while the seasonal parameters, which bypass both surrogates, agree to two decimal places</td></tr>
 <tr><td><strong>Uncertainty</strong> width</td><td class="no">no</td>
 <td>DeepRV's 95% bands cover the synthetic truth 85.7% of the time against HSGP's 94.6%</td></tr>
 </table></div>
 
-<figure><img src="figures/nl_births_hp_kde.png" alt="Netherlands births hyperparameter posteriors">
-<figcaption>Netherlands births. The fitted components are visually identical between methods
-(correlation 0.9999), but the trend hyperparameters — the ones that pass through the decoder — are
-displaced. The four parameters that bypass it coincide. A component plot cannot reveal this.</figcaption></figure>
+<figure><img src="figures/ecdc_hsgp_vs_deeprv_kde.png" alt="ECDC hyperparameter posteriors">
+<figcaption>ECDC hyperparameter posteriors, HSGP (blue) against DeepRV (orange). The seasonal
+parameters and the trend lengthscale coincide, since neither passes through a surrogate. The
+components that differ are the ones the representations touch — and the amplitudes are not on a
+common scale by construction, which is why components are compared through the variance
+decomposition instead.</figcaption></figure>
 
 <h2>Which method wins depends on the interaction</h2>
 <p>Both measles panels carry a space–time interaction, and it is the only component on which the

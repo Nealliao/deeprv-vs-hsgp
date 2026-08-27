@@ -8,7 +8,7 @@ leaving the sampler and the inferential target unchanged: **HSGP** (a fixed basi
 eigenfunctions) and **DeepRV** (a neural decoder trained offline on exact GP draws). Kernel, seasonal
 component, priors, likelihood and NUTS settings are matched across methods.
 
-📄 [Thesis PDF](docs/thesis.pdf) · 🌐 [Project site](https://Nealliao.github.io/deeprv-vs-hsgp/)
+🌐 [Project site](https://Nealliao.github.io/deeprv-vs-hsgp/)
 
 ## Layout
 
@@ -16,7 +16,6 @@ component, priors, likelihood and NUTS settings are matched across methods.
 experiments/
 ├── 01_synthetic_benchmark/    joint 9-hyperparameter benchmark, known ground truth
 ├── 02_synthetic_exact_gp/     exact full-rank GP reference + HSGP basis sweep
-├── 03_births_netherlands/     daily births 1995–2024, full-prior HSGP vs DeepRV
 ├── 04_ecdc_measles/           ECDC 2010–2019, 29 countries × 120 months (+ held-out CV)
 ├── 05_tycho_measles/          Project Tycho 1928–1962, 49 states × 420 months
 ├── 06_interaction_ablation/   refits with the space–time interaction removed
@@ -27,8 +26,6 @@ experiments/
 
 | Thesis section | Result | Script |
 |---|---|---|
-| §5.2 NL births | hyperparameter displacement | `03_births_netherlands/scripts/118e_netherlands_births_deeprv_fullprior.py` |
-| §5.2 Fig. 7 | hyperparameter KDEs | `07_audits/scripts/nl_births_hp_kde.py` |
 | §5.3 synthetic | RMSE / coverage over 3 seeds | `01_synthetic_benchmark/scripts/106_hsgp_seasonal_hp_benchmark.py`, `107_fit_deeprv_joint_hp_with_seasonal.py` |
 | §5.3 exact GP | untruncated reference, basis sweep | `02_synthetic_exact_gp/scripts/run_exactgp.py`, `run_hsgp.py` |
 | §5.4 ECDC | HSGP fit (R̂ 1.005, 34 div) | `04_ecdc_measles/scripts/111_ecdc_hsgp_joint_hp_nb.py` |
