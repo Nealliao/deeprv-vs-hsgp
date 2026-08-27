@@ -11,4 +11,5 @@ __pycache__/
 !experiments/**/decoder_config.npz
 *.pdf
 !thesis/*.pdf
+!docs/thesis.pdf
 outputs/
