@@ -8,6 +8,8 @@ leaving the sampler and the inferential target unchanged: **HSGP** (a fixed basi
 eigenfunctions) and **DeepRV** (a neural decoder trained offline on exact GP draws). Kernel, seasonal
 component, priors, likelihood and NUTS settings are matched across methods.
 
+📄 [Thesis PDF](docs/thesis.pdf) · 🌐 [Project site](https://Nealliao.github.io/deeprv-vs-hsgp/)
+
 ## Layout
 
 ```
